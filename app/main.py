@@ -2,6 +2,7 @@ from typing import Union
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+from datetime import datetime
 
 import platform
 
@@ -14,7 +15,8 @@ class Item(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World", "platform": platform.platform()}
+    my_date = datetime.now()
+    return {"Hello": "World", "platform": platform.platform(), "date": my_date.isoformat() }
 
 
 @app.get("/items/{item_id}")
