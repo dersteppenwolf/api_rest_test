@@ -18,7 +18,7 @@ docker build -t derstepp/api_rest_test .
 
 docker rm -f api_rest_test 
 
-docker run -d --name api_rest_test -p 80:80 derstepp/api_rest_test:latest
+docker run -d --name api_rest_test -p 8080:8080 derstepp/api_rest_test:latest
 
 
 docker logs -f api_rest_test
